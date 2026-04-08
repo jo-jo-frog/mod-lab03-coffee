@@ -63,7 +63,7 @@ public:
             }
         }
         if (choice == 0){
-          ifstream file(menu.txt);
+          ifstream file("menu.txt");
           string line;
             if (file.is_open()){
               while (getline(file, line)){
@@ -72,18 +72,18 @@ public:
                 double orderPrice;
                 getline(ss, orderName, ',');
                 ss >> orderPrice;
-                cout << "Название: " << orderName << ", Цена: " << orderPrice << endl;
+                menu.push_back(orderName);
+                prices.push_bacl(orderPrice);
               }
-              fileclose();
+              file.close();
             }
           else{
             cout << "Ошибка открытия файла" << endl;
-          }
+          } 
         }
 
-        int i = 0;
-        for (const auto& item : CoffeeMenu::GetMenu()) {
-            cout << ++i << ". " << item.first << " цена: " << item.second << endl;
+        for (int i = 0; i < menu.size(); ++i) {
+        cout << i + 1 << ". " << menu[i] << " цена: " << prices[i] << endl;
         }
     }
 
