@@ -1,3 +1,4 @@
+#include "Automata.h"
 #include <iostream>
 #include <vector>
 #include <string>
