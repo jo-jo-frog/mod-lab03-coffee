@@ -10,7 +10,7 @@
 #include <sstream>
 
 class Automata {
- public: 
+ public:
   enum class Status {
     OFF,
     WAIT,
@@ -39,7 +39,7 @@ class Automata {
   std::string getMenuName(int index) const { return menu[index]; }
   double getPrice(int index) const { return prices[index]; }
 
- private: 
+ private:
   double cash;
   std::vector<std::string> menu;
   std::vector<double> prices;
