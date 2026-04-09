@@ -10,8 +10,8 @@
 
 class CoffeeMenu {
  public:
-  static const std::unordered_map<std::string, double>& GetMenu() {
-    static std::unordered_map<std::string, double> menu = {
+  static const std::map<std::string, double>& GetMenu() {
+    static std::map<std::string, double> menu = {
         {"Эспрессо", 120.50},
         {"Американо", 150.00},
         {"Капучино", 180.00},
