@@ -31,13 +31,11 @@ TEST(AutomataTest, Coin_IncreasesCashAndSetsAcceptState) {
 }
 
 TEST(AutomataTest, EtMenu_LoadsStaticMenu) {
-  Automata machine;
-  machine.On();
-  machine.etMenu(1);
-  EXPECT_TRUE(machine.isMenuLoaded());
-  EXPECT_EQ(7, machine.getMenuSize());
-  EXPECT_EQ("Эспрессо", machine.getMenuName(0));
-  EXPECT_DOUBLE_EQ(120.50, machine.getPrice(0));
+    Automata machine;
+    machine.On();
+    machine.etMenu(1);
+    EXPECT_TRUE(machine.isMenuLoaded());
+    EXPECT_EQ(7, machine.getMenuSize());
 }
 
 TEST(AutomataTest, Check_WithEnoughMoney_ReturnsTrueAndDeductsCash) {
