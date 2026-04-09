@@ -73,7 +73,7 @@ public:
                 getline(ss, orderName, ',');
                 ss >> orderPrice;
                 menu.push_back(orderName);
-                prices.push_bacl(orderPrice);
+                prices.push_back(orderPrice);
               }
               file.close();
             }
