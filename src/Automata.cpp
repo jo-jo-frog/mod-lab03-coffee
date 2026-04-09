@@ -9,7 +9,7 @@
 #include <vector>
 
 class CoffeeMenu {
- public: 
+ public:
   static const std::unordered_map<std::string, double>& GetMenu() {
     static std::unordered_map<std::string, double> menu = {
         {"Эспрессо", 120.50},
@@ -74,7 +74,8 @@ void Automata::etMenu(int choice) {
   }
 
   for (size_t i = 0; i < menu.size(); ++i) {
-    std::cout << i + 1 << ". " << menu[i] << " цена: " << prices[i] << std::endl;
+    std::cout << i + 1 << ". " << menu[i]
+          << " цена: " << prices[i] << std::endl;
   }
 }
 
