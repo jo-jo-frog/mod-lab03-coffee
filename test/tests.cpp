@@ -1,5 +1,4 @@
-// Copyright 2022 GHA Test Team
-
+// Copyright 2026 Anisimov Kirill
 #include <gtest/gtest.h>
 #include "Automata.h"
 
@@ -102,24 +101,24 @@ TEST(AutomataTest, Cancel_ReturnsAllCashAndSetsWaitState) {
 
 TEST(AutomataTest, FullWorkflow_CompleteCycle) {
     Automata machine;
-    
+
     machine.On();
     EXPECT_EQ(Automata::Status::WAIT, machine.getStatus());
-    
+
     machine.etMenu(1);
     EXPECT_TRUE(machine.isMenuLoaded());
-    
+
     machine.Coin(200.0);
     EXPECT_DOUBLE_EQ(200.0, machine.getCash());
     EXPECT_EQ(Automata::Status::ACCEPT, machine.getStatus());
-    
+
     machine.Choice(2);
     EXPECT_DOUBLE_EQ(20.0, machine.getCash());
     EXPECT_EQ(Automata::Status::WAIT, machine.getStatus());
-    
+
     machine.Cancel();
     EXPECT_DOUBLE_EQ(0.0, machine.getCash());
-    
+
     machine.Off();
     EXPECT_EQ(Automata::Status::OFF, machine.getStatus());
 }
